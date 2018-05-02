@@ -36,10 +36,10 @@ namespace rockNES {
 	}	
 
 	void CPU::LDA_Inmediate(unsigned int operand) {
-		if(operand == 0x0) 
-			regs.P += 16; // Z flag to 1		
+		if(operand == 0x00) 
+			regs.P |= (1u << 1); // Z flag to 1		
 		if(operand <= 0x7F)
-			regs.P -= 32; // N flag to 0
+			regs.P &= ~(1u << 7); // N flag to 0
 		regs.A = operand;
 		cycles = 2;
 	}
