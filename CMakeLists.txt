@@ -4,9 +4,6 @@ project(rockNES)
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
 set(CMAKE_CXX_STANDARD 14)
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
-
 find_package(SDL2 REQUIRED)
 
 include_directories(main/include)
